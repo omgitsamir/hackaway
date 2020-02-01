@@ -47,13 +47,13 @@ export default function (x, y, game, socket) {
       }
 
       // Steers the car
-      // if (isDown(game, KEYS.A)) {
-      //   this.sprite.body.angularVelocity = -5 * (this.speed / 1000)
-      // } else if (isDown(game, KEYS.D)) {
-      //   this.sprite.body.angularVelocity = 5 * (this.speed / 1000)
-      // } else {
-      //   this.sprite.body.angularVelocity = 0
-      // }
+      if (isDown(game, KEYS.A)) {
+        this.sprite.body.angularVelocity = -5 * (this.speed / 1000)
+      } else if (isDown(game, KEYS.D)) {
+        this.sprite.body.angularVelocity = 5 * (this.speed / 1000)
+      } else {
+        this.sprite.body.angularVelocity = 0
+      }
 
       // add the percentage of happiness sadness whatever to this.
       

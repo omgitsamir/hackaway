@@ -14,7 +14,7 @@ const worldCreator = game => {
 }
 
 const createMap = game => {
-  //console.log(`width is ${width} and height ${height} `)
+  let bg = 
   game.add.sprite(0,0,'stadium')
   // let groundTiles = []
   // for (let i = 0; i <= width / 64 + 1; i++) {
