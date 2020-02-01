@@ -10,7 +10,6 @@ console.log('ho')
 const players = {}
 
 io.on('connection', socket => {
-  console.log("jsafjhfjaljf")
   // When a player connects
   socket.on('new-player', state => {
     console.log('New player joined with state:', state)
