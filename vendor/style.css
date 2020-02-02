@@ -28,7 +28,16 @@ div.panel ul {
 }
 
 ul h2 {
-     font-size: 120px;
+     font-size: 150px;
      display: inline-block;
      margin: 0;
 }
+
+/* #splashScreen{
+     width: 70%;
+     height:80%;
+     
+ } */
+ #controls {
+     color: red;
+ }

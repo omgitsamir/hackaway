@@ -7,7 +7,7 @@ import newPlayer from './sockets/newPlayer'
 import updatePlayers from './sockets/updatePlayers'
 import playerMovementInterpolation from './predictions/playerMovementInterpolation'
 
-const SERVER_IP = 'http://localhost:8000/'
+const SERVER_IP = 'http://172.20.10.8:8000/'
 let socket = null
 let otherPlayers = {}
 
