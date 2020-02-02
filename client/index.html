@@ -1,19 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>Emotion Race</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie+edge" />
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <script defer src="../vendor/face-api.min.js"></script>
+    <script defer src="../vendor/script.js"></script>
+    <title>Funny Game</title>
+    <!-- <link type="text/css" href="/style.css" rel="stylesheet" /> -->
     <style>
-      body, html {
-        margin: 0;
-        position: relative;
+      html {
+        background-color: white;
+      }
+      h2 {
+        font-size: 300px;
+        margin: 10px; 
+      }
+      .main {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        padding-top: 60px;
+        margin-left: 800px;
       }
     </style>
   </head>
   <body>
-      <div id = "phaser">
-    <script src="../vendor/phaser.min.js"></script>
-    <script src="https://simple-car-game.herokuapp.com/socket.io/socket.io.js"></script>
+    <div class="main">
+      <video id="video" width="720" height="560" autoplay muted></video>
+      <h2 id="emoji"></h2>
     </div>
+    <div id = "phaser">
+        <script src="../vendor/phaser.min.js"></script>
+        <script src="https://simple-car-game.herokuapp.com/socket.io/socket.io.js"></script>
+      </div>
   </body>
 </html>

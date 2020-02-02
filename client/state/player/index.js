@@ -27,26 +27,40 @@ export default function (x, y, game, socket) {
       if (this.speed !== 0) {
         this.emitPlayerData()
       }
+      //console.log("hello")
 
-      // Drive forward if W is pressed down
-      if (isDown(game, KEYS.W) && this.speed <= 400) {
+      //console.log(currentExpr);
+      // console.log(currentExprs);
+      // if(this.speed <= 100 && this.speed >= -100){
+      //   this.speed += (currentExprs.happy * 10) + (currentExprs.surprised * -10);
+      // }
+      // if (this.speed > 10) {
+      //   this.speed -=10
+      // } else if (this.speed < -10) {
+      //   this.speed += 10
+      // }
+
+
+      //Drive forward if W is pressed down
+      if (currentExprs.sad > 0.5 && this.speed <= 400) {
         this.speed += 10
       } else {
         if (this.speed >= 10) {
           this.speed -= 10
         }
       }
+      
 
       // Drive backwards if S is pressed down
-      if (isDown(game, KEYS.S) && this.speed >= -200) {
-        this.speed -= 5
+      if (currentExprs.happy > 0.5 && this.speed >= -200) {
+        this.speed -= 15
       } else {
-        if (this.speed <= -5) {
-          this.speed += 5
+        if (this.speed <= -15) {
+          this.speed += 15
         }
       }
 
-      // Steers the car
+      // // //Steers the car
       // if (isDown(game, KEYS.A)) {
       //   this.sprite.body.angularVelocity = -5 * (this.speed / 1000)
       // } else if (isDown(game, KEYS.D)) {
@@ -59,6 +73,8 @@ export default function (x, y, game, socket) {
       
       this.sprite.body.velocity.x = this.speed * Math.cos((this.sprite.body.angle - 360) * 0.01745)
       this.sprite.body.velocity.y = this.speed * Math.sin((this.sprite.body.angle - 360) * 0.01745)
+      // this.sprite.body.velocity.x = this.speed;
+      // this.sprite.body.velocity.y =0;
 
       // Brings the player's sprite to top
       game.world.bringToTop(this.sprite)
