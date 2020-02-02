@@ -1,0 +1,90 @@
+body {
+     margin: 0;
+     color:black;
+     font-family: 'Press Start 2P', cursive;
+}
+
+
+div.controls {
+     position: relative; 
+     top:10px; 
+     right:10px;  
+     background-color: aliceblue; 
+     border-color: grey;border-width: 1;
+}
+
+div.panel {
+     background: rgba(0,0,0,0.3);
+     height: auto;
+     position: fixed;
+     top: 0;
+     right: 0;
+     left: 0
+}
+
+div.panel ul {
+     list-style: none;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+}
+
+ul h2 {
+     font-size: 150px;
+     display: inline-block;
+     margin: 0;
+}
+
+#restart{
+    font-size: 30%
+}
+#winnerContainer{
+    background: rgba(0,0,0,0.3);
+     height: 40%;
+     width: 40%;
+     position: fixed;
+     margin: 0 auto;
+    z-index: 1;
+}
+ #countDown {
+     position: fixed;
+     font-size: 200px;
+     margin-left: 20px;
+     margin-top: 10px; 
+     padding-left: 300px;
+     text-align: center;
+     margin: 15%;
+ }
+#splashScreen{
+     align-items: center;
+     color:black;
+     font-family: 'Press Start 2P', cursive;
+}
+#startButton{
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.2s;
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: rgba(20, 9, 70,0.4);
+    padding: 14px 28px;
+    font-size: 30px;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    text-align: center;
+}
+#startButton:hover {
+    background-color: white; 
+    color: black;
+}
+
+#numbers{
+    font-size: 200px;
+     margin-left: 40px;
+     padding-left: 300px;
+     text-align: center;
+    color:black;
+    font-family: 'Press Start 2P', cursive;
+}
+
+

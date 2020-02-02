@@ -1,17 +1,180 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie+edge" />
+  <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+  <script defer src="../vendor/face-api.min.js"></script>
+  <script defer src="../vendor/script.js"></script>
+  <title>Funny Game</title>
+  <link type="text/css" href="../vendor/style.css" rel="stylesheet" />
+  <link type="text/css" href="./style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- <div id="splashScreen" 
+  style="
+  position:fixed;
+  align-content:center;
+  background-color:darkblue;
+  opacity:0.6; 
+  z-index: 1;
+  width: 70%;
+  height:80%;
+  ">
+    <h1>Game Title</h1>
+    <input id="startButton" type="button" value="Start" style="
+    width: 40px;
+    bottom: 2%;
+    margin-left: 20%;
+    "/>
+  </div> -->
+  <!-- 
+
+  <div style="margin-top: 350px">
+
+
   <head>
-    <meta charset="utf-8">
-    <title>Emotion Race</title>
-    <style>
-      body, html {
-        margin: 0;
-        position: relative;
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+      body {font-family: Arial, Helvetica, sans-serif;}
+      
+      /* The Modal (background) */
+      .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
       }
-    </style>
+      
+      /* Modal Content */
+      .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 10 px;
+        border: 1px solid #888;
+        width: 80%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s
+      }
+      
+      /* Add Animation */
+      @-webkit-keyframes animatetop {
+        from {top:-300px; opacity:0} 
+        to {top:0; opacity:1}
+      }
+      
+      @keyframes animatetop {
+        from {top:-300px; opacity:0}
+        to {top:0; opacity:1}
+      }
+      
+      /* The Close Button */
+      .close {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      
+      .modal-header {
+        padding: 2px 16px;
+        background-color: rgb(20, 8, 185);
+        color: white;
+      }
+      
+      .modal-body {padding: 2px 16px;}
+      
+      .modal-footer {
+        padding: 2px 16px;
+        background-color: rgb(20, 8, 185);
+        color: white;
+      }
+      </style> -->
   </head>
-  <body>
-    <script src="../vendor/phaser.min.js"></script>
-    <script src="https://simple-car-game.herokuapp.com/socket.io/socket.io.js"></script>
-  </body>
+
+<!-- 
+
+  <div id="winnerContainer">
+    <div id="winner"> Player 1</div>
+
+    <button id="restart">Restart</button>
+  </div> -->
+
+
+
+  <div class="main">
+    <div class="panel">
+      <ul>
+        <li><video id="video" width="266" height="280" autoplay muted></video> </li>
+        <li>
+          <h2 id="emoji"></h2>
+        </li>
+        <li>
+          <div id="controls">
+            <div style="flex-direction:row; display: flex;">
+              <h3>Move Right:</h3>
+              <div id="rightHolder" style="padding:2px;margin-top: 1.4%;margin-left:2%;font-size: 30px"></div>
+            </div>
+            <div style="flex-direction:row; display: flex; justify-content: space-between;">
+              <h3>Move Left:</h3>
+              <div id="leftHolder"style="padding:2px;margin-top: 1.4%;margin-left:1%;font-size: 30px"></div>
+            </div>
+            <div style="flex-direction:row; display: flex; justify-content: space-between;">
+              <h3>Go Forward:</h3>
+              <div id="forwardHolder"style="padding:2px;margin-top: 1.4%;margin-left:1%;font-size: 30px"></div>
+            </div>
+            <div style="flex-direction:row; display: flex; justify-content: space-between;">
+              <h3>Move Backwards:</h3>
+              <div id="backwardHolder"style="padding:2px;margin-top: 1.4%;margin-left:1%;font-size: 30px"></div>
+            </div>
+            <div id="splashScreen">
+              <button id="startButton" onclick="onStart()">Start</button>
+            </div>
+        </li>
+      </ul>
+    </div>
+    <div class="game">
+      <div id="countDown">
+        <div id="numbers"></div>
+      </div>   
+
+      <script src="../vendor/phaser.min.js"></script>
+      <script src="https://simple-car-game.herokuapp.com/socket.io/socket.io.js"></script>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
 </html>
