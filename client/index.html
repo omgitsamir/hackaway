@@ -31,7 +31,7 @@
     margin-left: 20%;
     "/>
   </div> -->
-
+  <!-- 
 
   <div style="margin-top: 350px">
 
@@ -112,122 +112,53 @@
         background-color: rgb(20, 8, 185);
         color: white;
       }
-      </style>
-      </head>
-      <body>
-      
-      
-      <!-- Trigger/Open The Modal -->
-      <button id="openModal">Open Modal</button>
+      </style> -->
+  </head>
 
-      <!-- The Modal -->
-      <div id="myModal" class="modal">
-            
-              <!-- Modal content -->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <span class="close">&times;</span>
-                  <h2>Grin2Win (G2R)</h2>
-                </div>
-                <div class="modal-body">
-                    <h1>Ayyyy, You Win!</h1>
-                    <button class="restart">Play Again</button>
-                </div>
-                <div class="modal-footer">
-                  <h3>Hackawayyyyyy...</h3>
-      
-          <style>
-              .restart {
-                display: block;
-                width: 200 px;
-                border: none;
-                background-color: rgb(110, 89, 98);
-                color: white;
-                padding: 14px 28px;
-                font-size: 16px;
-                cursor: pointer;
-                text-align: center;
-              }
-              
-              .restart:hover {
-                background-color: rgb(138, 165, 255);
-                color: black;
-              }
-              </style>
-                </div>
-              </div>
-            </div>
-            
-      
-      <script>
-      // Get the modal
-      var modal = document.getElementById("myModal");
-      
-      // Get the button that opens the modal
-      var openModalBtn = document.getElementById("openModal");
-      
-      // Get the button that restarts the game
-      var restartBtn = document.getElementById("restart");
-      
-      // Get the <span> element that closes the modal
-      var span = document.getElementsByClassName("close")[0];
-      
-      // When the user clicks the button, open the modal 
-      openModalBtn.onclick = function() {
-        modal.style.display = "block";
-      }
-      
-      // When the user clicks on <span> (x), close the modal
-      span.onclick = function() {
-        modal.style.display = "none";
-      }
-      
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      }
-      </script>
-<!--       
+
+    <!--       
       <div id="winnerContainer">
         <div id="winner"> Player 1</div>
 
         <button id="restart">Restart</button>
       </div> -->
-  <div class="main">
-    <div class="panel">
-      <ul>
-        <li><video id="video" width="266" height="200" autoplay muted></video> </li>
-        <li>
-          <h2 id="emoji"></h2>
-        </li>
-        <li>
-          <div id="controls">
-            <div style="flex-direction:row; display: flex; justify-content: space-between;">
-              <h3>Move Right:</h3>
-              <h4>Smile</h4>
-            </div>
-            <div style="flex-direction:row; display: flex; justify-content: space-between;">
-              <h3>Move Left:</h3>
-              <h4>Grin</h4>
-            </div>
-            <div style="flex-direction:row; display: flex; justify-content: space-between;">
-              <h3>Move Forward:</h3>
-              <h3>Be sad</h3>
-            </div>
-            <div style="flex-direction:row; display: flex; justify-content: space-between;">
-              <h3>Move Backward:</h3>
-              <h3>be happy</h3>
-            </div>
-        </li>
-      </ul>
+    <div class="main">
+      <div class="panel">
+        <ul>
+          <li><video id="video" width="266" height="280" autoplay muted></video> </li>
+          <li>
+            <h2 id="emoji"></h2>
+          </li>
+          <li>
+            <div id="controls">
+              <div style="flex-direction:row; display: flex; justify-content: space-between;">
+                <h3>Move Right:</h3>
+                <h4>Smile</h4>
+              </div>
+              <div style="flex-direction:row; display: flex; justify-content: space-between;">
+                <h3>Move Left:</h3>
+                <h4>Grin</h4>
+              </div>
+              <div style="flex-direction:row; display: flex; justify-content: space-between;">
+                <h3>Move Forward:</h3>
+                <h3>Be sad</h3>
+              </div>
+              <div style="flex-direction:row; display: flex; justify-content: space-between;">
+                <h3>Move Backward:</h3>
+                <h3>be happy</h3>
+              </div>
+              <div id="splashScreen">
+                <button id="startButton" onclick="onStart()">Start</button>
+              </div>
+          </li>
+        </ul>
+      </div>
+      <div class="game">
+        <div id="countDown"></div>   
+        <script src="../vendor/phaser.min.js"></script>
+        <script src="https://simple-car-game.herokuapp.com/socket.io/socket.io.js"></script>
+      </div>
     </div>
-    <div class="game">
-      <script src="../vendor/phaser.min.js"></script>
-      <script src="https://simple-car-game.herokuapp.com/socket.io/socket.io.js"></script>
-    </div>
-  </div>
 
 
 
