@@ -32,3 +32,18 @@ ul h2 {
      display: inline-block;
      margin: 0;
 }
+
+#restart{
+    font-size: 30%
+}
+#winnerContainer{
+    background: rgba(0,0,0,0.3);
+     height: 40%;
+     width: 40%;
+     position: fixed;
+     top: 0;
+     right: 0;
+     left: 0;
+     bottom: 0;
+    z-index: 1;
+}
