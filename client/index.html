@@ -14,24 +14,6 @@
 </head>
 
 <body>
-  <!-- <div id="splashScreen" 
-  style="
-  position:fixed;
-  align-content:center;
-  background-color:darkblue;
-  opacity:0.6; 
-  z-index: 1;
-  width: 70%;
-  height:80%;
-  ">
-    <h1>Game Title</h1>
-    <input id="startButton" type="button" value="Start" style="
-    width: 40px;
-    bottom: 2%;
-    margin-left: 20%;
-    "/>
-  </div> -->
-
   <div class="main">
     <div class="panel">
       <ul>
@@ -57,10 +39,14 @@
               <h3>Move Backward:</h3>
               <h3>be happy</h3>
             </div>
+            <div id="splashScreen">
+              <button id="startButton" onclick="onStart()">Start</button>
+            </div>
         </li>
       </ul>
     </div>
     <div class="game">
+        <div id= "countDown"></div>    
       <script src="../vendor/phaser.min.js"></script>
       <script src="https://simple-car-game.herokuapp.com/socket.io/socket.io.js"></script>
     </div>

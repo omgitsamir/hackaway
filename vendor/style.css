@@ -41,3 +41,20 @@ ul h2 {
  #controls {
      color: red;
  }
+ #countDown {
+     position: fixed;
+     font-size: 450px;
+     color: blue;
+     margin-left: 40px;
+     padding-left: 300px;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+     text-align: center;
+     margin: 15%;
+ }
+#splashScreen{
+     align-items: center;
+}
+#startButton{
+     font-size: 30px;
+     background-color: cadetblue;
+}
