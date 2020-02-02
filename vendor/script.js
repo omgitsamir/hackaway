@@ -65,17 +65,20 @@ function findMax(exprIn){
   return maxValue[0];
 }
 
+document.getElementById('rightHolder').innerHTML = `&#${emojiMap['surprised']}`
+document.getElementById('leftHolder').innerHTML = `&#${emojiMap['angry']}`
+document.getElementById('forwardHolder').innerHTML = `&#${emojiMap['sad']}`
+document.getElementById('backwardHolder').innerHTML = `&#${emojiMap['happy']}`
+
 function onStart(){
-  //console.log("i have been clicked")
   let splashScreen = document.getElementById('splashScreen')
   splashScreen.style.display = "none";
 
   let second = 3;
   var x = setInterval(function() {
-    document.getElementById("countDown").innerHTML =  second - 1;
+    document.getElementById("numbers").innerHTML =  second - 1;
     second -= 1;
     if(second == 0){
-      console.log("here");
       document.getElementById("countDown").innerHTML = "Start";
       clearInterval(x);
       setTimeout(() => {

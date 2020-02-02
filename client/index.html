@@ -11,6 +11,7 @@
   <title>Funny Game</title>
   <link type="text/css" href="../vendor/style.css" rel="stylesheet" />
   <link type="text/css" href="./style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -115,50 +116,56 @@
       </style> -->
   </head>
 
+<!-- 
 
-    <!--       
-      <div id="winnerContainer">
-        <div id="winner"> Player 1</div>
+  <div id="winnerContainer">
+    <div id="winner"> Player 1</div>
 
-        <button id="restart">Restart</button>
-      </div> -->
-    <div class="main">
-      <div class="panel">
-        <ul>
-          <li><video id="video" width="266" height="280" autoplay muted></video> </li>
-          <li>
-            <h2 id="emoji"></h2>
-          </li>
-          <li>
-            <div id="controls">
-              <div style="flex-direction:row; display: flex; justify-content: space-between;">
-                <h3>Move Right:</h3>
-                <h4>Smile</h4>
-              </div>
-              <div style="flex-direction:row; display: flex; justify-content: space-between;">
-                <h3>Move Left:</h3>
-                <h4>Grin</h4>
-              </div>
-              <div style="flex-direction:row; display: flex; justify-content: space-between;">
-                <h3>Move Forward:</h3>
-                <h3>Be sad</h3>
-              </div>
-              <div style="flex-direction:row; display: flex; justify-content: space-between;">
-                <h3>Move Backward:</h3>
-                <h3>be happy</h3>
-              </div>
-              <div id="splashScreen">
-                <button id="startButton" onclick="onStart()">Start</button>
-              </div>
-          </li>
-        </ul>
-      </div>
-      <div class="game">
-        <div id="countDown"></div>   
-        <script src="../vendor/phaser.min.js"></script>
-        <script src="https://simple-car-game.herokuapp.com/socket.io/socket.io.js"></script>
-      </div>
+    <button id="restart">Restart</button>
+  </div> -->
+
+
+
+  <div class="main">
+    <div class="panel">
+      <ul>
+        <li><video id="video" width="266" height="280" autoplay muted></video> </li>
+        <li>
+          <h2 id="emoji"></h2>
+        </li>
+        <li>
+          <div id="controls">
+            <div style="flex-direction:row; display: flex;">
+              <h3>Move Right:</h3>
+              <div id="rightHolder" style="padding:2px;margin-top: 1.4%;margin-left:2%;font-size: 30px"></div>
+            </div>
+            <div style="flex-direction:row; display: flex; justify-content: space-between;">
+              <h3>Move Left:</h3>
+              <div id="leftHolder"style="padding:2px;margin-top: 1.4%;margin-left:1%;font-size: 30px"></div>
+            </div>
+            <div style="flex-direction:row; display: flex; justify-content: space-between;">
+              <h3>Go Forward:</h3>
+              <div id="forwardHolder"style="padding:2px;margin-top: 1.4%;margin-left:1%;font-size: 30px"></div>
+            </div>
+            <div style="flex-direction:row; display: flex; justify-content: space-between;">
+              <h3>Move Backwards:</h3>
+              <div id="backwardHolder"style="padding:2px;margin-top: 1.4%;margin-left:1%;font-size: 30px"></div>
+            </div>
+            <div id="splashScreen">
+              <button id="startButton" onclick="onStart()">Start</button>
+            </div>
+        </li>
+      </ul>
     </div>
+    <div class="game">
+      <div id="countDown">
+        <div id="numbers"></div>
+      </div>   
+
+      <script src="../vendor/phaser.min.js"></script>
+      <script src="https://simple-car-game.herokuapp.com/socket.io/socket.io.js"></script>
+    </div>
+  </div>
 
 
 
