@@ -32,8 +32,8 @@ io.on('connection', socket => {
       return
     }
     console.log(x)
-    if(x>1380){
-      console.log("player won at 1380m")
+    if(x>1345){
+      console.log("player won at 1345m")
     }
     // Update the player's data if he moved
     players[socket.id].x = x
