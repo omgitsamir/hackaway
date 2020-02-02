@@ -9,6 +9,7 @@ export default function (x, y, game, socket) {
     speed: 0,
     speedText: null,
     drive (game) {
+      if (game.state.state == 'running') {
       /*
       Most of the driving logic was written by Daniel Wuggenig
       https://www.anexia-it.com/blog/en/introduction-to-the-phaser-framework/
@@ -91,6 +92,7 @@ export default function (x, y, game, socket) {
 
       this.updatePlayerName()
       this.updatePlayerStatusText('speed', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
+    }
     },
     emitPlayerData () {
       // Emit the 'move-player' event, updating the player's data on the server
@@ -131,5 +133,6 @@ export default function (x, y, game, socket) {
       game.world.bringToTop(text)
     }
   }
+  
   return player
 }

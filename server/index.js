@@ -8,6 +8,10 @@ const io = require('socket.io')(Server)
 Server.listen(PORT, () => console.log('Game server running on:', PORT))
 console.log('ho')
 const players = {}
+let gameState = {
+  winner: null,
+  state: 'running'
+}
 
 io.on('connection', socket => {
   // When a player connects
@@ -32,8 +36,17 @@ io.on('connection', socket => {
       return
     }
     console.log("x: " + x + " y: " + y)
-    if(x>1448 && x<1454 && y>690 && y<700){
-      console.log("player found the star")
+    // if(x>1448 && x<1454 && y>690 && y<700){
+      
+    //   console.log("player found the star")
+    // }
+    if (x > 500 && gameState.state == 'running') {
+      console.log('found')
+      gameState = {
+        winner: players[socket.id],
+        state: 'waiting'
+      }
+      io.emit('update-game', gameState);
     }
     // Update the player's data if he moved
     players[socket.id].x = x
