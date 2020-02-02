@@ -5,6 +5,7 @@ import createWorld from './world/createWorld'
 import player from './player'
 import newPlayer from './sockets/newPlayer'
 import updatePlayers from './sockets/updatePlayers'
+import updateGame from './sockets/updateGame'
 import playerMovementInterpolation from './predictions/playerMovementInterpolation'
 
 //  const SERVER_IP = 'http://172.20.10.7:8000/'
@@ -41,6 +42,9 @@ class Game extends Phaser.State {
     newPlayer(socket, this.player)
     // update all players
     updatePlayers(socket, otherPlayers, this.game)
+    // update game
+    updateGame(socket, this.game)
+
 
     // Configures the game camera
     this.game.camera.x = this.player.sprite.x - 800 / 2

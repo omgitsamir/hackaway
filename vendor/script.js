@@ -13,8 +13,8 @@ const emojiMap = {
   angry: "x1F620",
   fearful: "x1F628",
   disgusted: "x1F974",
-  surprised: "x1F92A",
-}
+  surprised: "x1F92A"
+};
 
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri("../vendor/models"),
@@ -24,16 +24,16 @@ Promise.all([
 ]).then(startVideo);
 
 function startVideo() {
-  navigator.getUserMedia = navigator.getUserMedia ||
-                         navigator.webkitGetUserMedia ||
-                         navigator.mozGetUserMedia;
-    if (navigator.getUserMedia) {
-    navigator.getUserMedia(
-      { video: {} },
-      stream => (video.srcObject = stream),
-      err => console.error(err)
-    );
-  }
+  navigator.mediaDevices
+    .getUserMedia({ video: {} })
+    .then(function(stream) {
+      /* use the stream */
+      video.srcObject = stream;
+    })
+    .catch(function(err) {
+      /* handle the error */
+      console.error(err);
+    });
 }
 
 video.addEventListener("play", () => {
@@ -55,10 +55,10 @@ video.addEventListener("play", () => {
   }, 400);
 });
 
-function findMax(exprIn){
-  let maxValue= [0,0];
+function findMax(exprIn) {
+  let maxValue = [0, 0];
   for (let one of Object.entries(exprIn)) {
-    if(one[1] > maxValue[1]) {
+    if (one[1] > maxValue[1]) {
       maxValue = one;
     }
   }
@@ -79,6 +79,7 @@ function onStart(){
     document.getElementById("numbers").innerHTML =  second - 1;
     second -= 1;
     if(second == 0){
+      fetch('/start')
       document.getElementById("countDown").innerHTML = "Start";
       clearInterval(x);
       setTimeout(() => {
@@ -87,5 +88,4 @@ function onStart(){
     }
   }, 1400);
 }
-
 
