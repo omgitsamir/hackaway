@@ -33,6 +33,20 @@ ul h2 {
      margin: 0;
 }
 
+#restart{
+    font-size: 30%
+}
+#winnerContainer{
+    background: rgba(0,0,0,0.3);
+     height: 40%;
+     width: 40%;
+     position: fixed;
+     top: 0;
+     right: 0;
+     left: 0;
+     bottom: 0;
+    z-index: 1;
+}
 /* #splashScreen{
      width: 70%;
      height:80%;
@@ -41,3 +55,20 @@ ul h2 {
  #controls {
      color: red;
  }
+ #countDown {
+     position: fixed;
+     font-size: 450px;
+     color: blue;
+     margin-left: 40px;
+     padding-left: 300px;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+     text-align: center;
+     margin: 15%;
+ }
+#splashScreen{
+     align-items: center;
+}
+#startButton{
+     font-size: 30px;
+     background-color: cadetblue;
+}

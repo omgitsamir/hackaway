@@ -47,9 +47,11 @@ video.addEventListener("play", () => {
       .withFaceLandmarks()
       .withFaceExpressions();
     //console.log(detections[0].expressions);
-    currentExprs = detections[0].expressions;
-    const result = findMax(detections[0].expressions);
-    emoji.innerHTML = `&#${emojiMap[result]}`;
+    if (detections) {
+      currentExprs = detections[0].expressions;
+      const result = findMax(detections[0].expressions);
+      emoji.innerHTML = `&#${emojiMap[result]}`;
+    }
   }, 400);
 });
 
@@ -62,3 +64,23 @@ function findMax(exprIn) {
   }
   return maxValue[0];
 }
+function onStart(){
+  //console.log("i have been clicked")
+  let splashScreen = document.getElementById('splashScreen')
+  splashScreen.style.display = "none";
+
+  let second = 3;
+  var x = setInterval(function() {
+    document.getElementById("countDown").innerHTML =  second - 1;
+    second -= 1;
+    if(second == 0){
+      fetch('/start')
+      document.getElementById("countDown").innerHTML = "Start";
+      clearInterval(x);
+      setTimeout(() => {
+        document.getElementById("countDown").style.display = "none";
+      }, 1000)
+    }
+  }, 1400);
+}
+

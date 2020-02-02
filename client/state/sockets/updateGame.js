@@ -1,6 +1,7 @@
 const updateGame = (socket, game) => {
   socket.on('update-game', gameState => {
-    game.setState(gameState);
+    game.gameState = gameState;
+    console.log(gameState);
   })
 }
 
