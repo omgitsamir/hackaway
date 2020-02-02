@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Emotion Race</title>
-    <style>
-      body, html {
-        margin: 0;
-        position: relative;
-      }
-    </style>
-  </head>
-  <body>
-    <script src="../vendor/phaser.min.js"></script>
-    <script src="https://simple-car-game.herokuapp.com/socket.io/socket.io.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Emotion Race</title>
+  <style>
+    body,
+    html {
+      margin: 0;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="controls" style="position:fixed; top:0%; right:0%;  background-color: aliceblue; border-color: grey;border-width: 1;border-style: dashed;">
+      <div style="flex-direction:row; display: flex; justify-content: space-between;">
+      <h3>Move Right:</h3>
+      <h4>Smile</h4>
+    </div>
+    <div style="flex-direction:row; display: flex; justify-content: space-between;">
+      <h3>Move Left:</h3>
+      <h4>Grin</h4>
+    </div>
+    <div style="flex-direction:row; display: flex; justify-content: space-between;">
+      <h3>Move Forward:</h3>
+      <h4>Be Angry</h4>
+    </div>
+    <div style="flex-direction:row; display: flex; justify-content: space-between;">
+      <h3>Move Backward:</h3>
+      <h4>Wow</h4>
+    </div>
+    
+  </div>
+  <script src="../vendor/phaser.min.js"></script>
+  <script src="https://simple-car-game.herokuapp.com/socket.io/socket.io.js"></script>
+</body>
+
 </html>
