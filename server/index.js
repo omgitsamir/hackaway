@@ -31,9 +31,9 @@ io.on('connection', socket => {
     if (players[socket.id] === undefined) {
       return
     }
-    console.log(x)
-    if(x>1345){
-      console.log("player won at 1345m")
+    console.log("x: " + x + " y: " + y)
+    if(x>1448 && x<1454 && y>690 && y<700){
+      console.log("player found the star")
     }
     // Update the player's data if he moved
     players[socket.id].x = x

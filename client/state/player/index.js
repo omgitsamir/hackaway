@@ -16,12 +16,12 @@ export default function (x, y, game, socket) {
       online car game, his driving solution is simple and clean and fits perfectly
       */
 
-      const KEYS = {
-        W: Phaser.Keyboard.W,
-        S: Phaser.Keyboard.S,
-        A: Phaser.Keyboard.A,
-        D: Phaser.Keyboard.D
-      }
+      // const KEYS = {
+      //   W: Phaser.Keyboard.W,
+      //   S: Phaser.Keyboard.S,
+      //   A: Phaser.Keyboard.A,
+      //   D: Phaser.Keyboard.D
+      // }
 
       // Only emit if the player is moving
       if (this.speed !== 0) {
@@ -59,15 +59,25 @@ export default function (x, y, game, socket) {
           this.speed += 15
         }
       }
-
-      // // //Steers the car
+      // //Steers the car
       // if (isDown(game, KEYS.A)) {
-      //   this.sprite.body.angularVelocity = -5 * (this.speed / 1000)
+      //   //this.sprite.body.angularVelocity = -5 * (this.speed / 1000)
+      //   this.sprite.body.angularVelocity = -5 * (140 / 1000)
       // } else if (isDown(game, KEYS.D)) {
-      //   this.sprite.body.angularVelocity = 5 * (this.speed / 1000)
+      //   this.sprite.body.angularVelocity = 5 * (140/ 1000)
       // } else {
       //   this.sprite.body.angularVelocity = 0
       // }
+      if (currentExprs.surprised>0.5) {
+        //this.sprite.body.angularVelocity = -5 * (this.speed / 1000)
+        this.sprite.body.angularVelocity = -5 * (140 / 1000)
+        this.speed += 8
+      } else if (currentExprs.angry>0.5) {
+        this.sprite.body.angularVelocity = 5 * (140/ 1000)
+        this.speed += 8
+      } else {
+        this.sprite.body.angularVelocity = 0
+      }
 
       // add the percentage of happiness sadness whatever to this.
       
